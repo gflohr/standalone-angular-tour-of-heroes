@@ -7,7 +7,8 @@
 		"build": "ng build",
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test",
-		"format": "prettier --write *.md *.json src/**/*.ts src/**/*.html src/**/*.css"
+		"format": "prettier --write *.md *.json src/**/*.ts src/**/*.html src/**/*.css",
+		"prepare": "husky"
 	},
 	"private": true,
 	"dependencies": {
@@ -28,6 +29,7 @@
 		"@angular/cli": "^17.3.0",
 		"@angular/compiler-cli": "^17.3.0",
 		"@types/jasmine": "~5.1.0",
+		"husky": "^9.0.11",
 		"jasmine-core": "~5.1.0",
 		"karma": "~6.4.0",
 		"karma-chrome-launcher": "~3.2.0",
