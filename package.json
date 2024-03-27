@@ -3,11 +3,11 @@
 	"version": "0.0.0",
 	"scripts": {
 		"ng": "ng",
-		"start": "ng serve",
+		"start": "ng serve --open",
 		"build": "ng build",
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test",
-		"format": "prettier --write *.md *.json src/**/*.ts src/**/*.html src/**/*.css",
+		"format": "prettier --write *.md *.json \"src/**/*.ts\" \"src/**/*.html\" \"src/**/*.css\"",
 		"prepare": "husky"
 	},
 	"private": true,
