@@ -18,7 +18,7 @@ export class HeroesComponent {
 	constructor(private heroService: HeroService) {}
 
 	ngOnInit() {
-		this.getHeroes()
+		this.getHeroes();
 	}
 
 	private getHeroes() {
