@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Hero } from '../hero';
-import { CommonModule, NgIf } from '@angular/common';
+import { CommonModule, Location, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { HeroService } from '../hero.service';
@@ -18,15 +18,19 @@ export class HeroDetailComponent {
 	constructor(
 		private readonly route: ActivatedRoute,
 		private heroService: HeroService,
+		private location: Location,
 	) {}
 
 	ngOnInit() {
 		this.getHero();
 	}
 
+	goBack(): void {
+		this.location.back();
+	}
+
 	private getHero() {
 		const id = Number(this.route.snapshot.paramMap.get('id'));
-		console.log(`id: ${id}`);
 		this.heroService.getHero(id).subscribe(hero => (this.hero = hero));
 	}
 }
