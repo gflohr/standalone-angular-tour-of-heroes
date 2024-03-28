@@ -1,20 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 import { Hero } from '../hero';
-import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
 	selector: 'app-heroes',
 	standalone: true,
-	imports: [CommonModule, NgFor, HeroDetailComponent],
+	imports: [CommonModule, NgFor, RouterModule],
 	templateUrl: './heroes.component.html',
 	styleUrl: './heroes.component.css',
 })
 export class HeroesComponent {
 	heroes?: Hero[];
-	selectedHero?: Hero;
 
 	constructor(
 		private readonly heroService: HeroService,
@@ -27,10 +26,5 @@ export class HeroesComponent {
 
 	private getHeroes() {
 		this.heroService.getHeroes().subscribe(heroes => (this.heroes = heroes));
-	}
-
-	onSelect(hero: Hero) {
-		this.selectedHero = hero;
-		this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
 	}
 }
